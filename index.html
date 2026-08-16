@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GenLayer Spinner — Consensus Orbit</title>
+  <style>
+    :root { color-scheme: light dark; font-family: Inter, system-ui, sans-serif; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f7f7fb; color:#111827; }
+    .card { width:min(720px,calc(100% - 32px)); padding:32px; box-sizing:border-box; border:1px solid #e5e7eb; border-radius:24px; background:white; text-align:center; }
+    .preview { min-height:260px; display:grid; place-items:center; border-radius:18px; background:#f7f7fb; margin:24px 0; }
+    .preview img { width:96px; height:96px; }
+    .sizes { display:flex; gap:24px; justify-content:center; align-items:end; margin-top:20px; }
+    .sizes div { display:grid; gap:8px; font-size:12px; color:#6b7280; }
+    img.s16{width:16px;height:16px} img.s32{width:32px;height:32px} img.s64{width:64px;height:64px}
+    .dark { background:#080b14; color:#f9fafb; }
+    .dark .card { background:#111522; border-color:#252b3b; }
+    .dark .preview { background:#080b14; }
+    button { border:0; border-radius:999px; padding:10px 16px; cursor:pointer; font-weight:700; }
+    @media (prefers-color-scheme: dark) { body { background:#080b14;color:#f9fafb; } .card{background:#111522;border-color:#252b3b}.preview{background:#080b14} }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>GenLayer Consensus Orbit</h1>
+    <p>A smooth, infinite SVG spinner inspired by validators orbiting a shared GenLayer core.</p>
+    <div class="preview"><img src="./genlayer-spinner.svg" alt="Animated GenLayer spinner"></div>
+    <button onclick="document.body.classList.toggle('dark')">Toggle light / dark</button>
+    <div class="sizes">
+      <div><img class="s16" src="./genlayer-spinner.svg" alt="16px"><span>16px</span></div>
+      <div><img class="s32" src="./genlayer-spinner.svg" alt="32px"><span>32px</span></div>
+      <div><img class="s64" src="./genlayer-spinner.svg" alt="64px"><span>64px</span></div>
+    </div>
+  </main>
+</body>
+</html>
