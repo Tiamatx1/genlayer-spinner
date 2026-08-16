@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="GenLayer Consensus Orbit spinner">
+  <defs>
+    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .orbit { transform-origin: 32px 32px; animation: orbit 1.4s linear infinite; }
+      .node { transform-box: fill-box; transform-origin: center; animation: pulse 1.4s ease-in-out infinite; }
+      .n2 { animation-delay: -0.23s; } .n3 { animation-delay: -0.47s; }
+      .n4 { animation-delay: -0.70s; } .n5 { animation-delay: -0.93s; } .n6 { animation-delay: -1.17s; }
+      @keyframes orbit { to { transform: rotate(360deg); } }
+      @keyframes pulse { 0%,100% { transform: scale(.82); opacity:.55; } 50% { transform: scale(1.08); opacity:1; } }
+      @media (prefers-reduced-motion: reduce) {
+        .orbit, .node { animation-duration: 0s; animation-iteration-count: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Subtle orbit: validator nodes moving around a shared GenLayer core -->
+  <g class="orbit">
+    <circle cx="32" cy="32" r="22" fill="none" stroke="url(#gl)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3.5 5.5" opacity=".38"/>
+    <g filter="url(#softGlow)">
+      <polygon class="node" points="32,6 37,9 37,15 32,18 27,15 27,9" fill="url(#gl)"/>
+      <polygon class="node n2" points="54.5,19 59.5,22 59.5,28 54.5,31 49.5,28 49.5,22" fill="url(#gl)"/>
+      <polygon class="node n3" points="54.5,45 59.5,48 59.5,54 54.5,57 49.5,54 49.5,48" fill="url(#gl)"/>
+      <polygon class="node n4" points="32,46 37,49 37,55 32,58 27,55 27,49" fill="url(#gl)"/>
+      <polygon class="node n5" points="9.5,45 14.5,48 14.5,54 9.5,57 4.5,54 4.5,48" fill="url(#gl)"/>
+      <polygon class="node n6" points="9.5,19 14.5,22 14.5,28 9.5,31 4.5,28 4.5,22" fill="url(#gl)"/>
+    </g>
+  </g>
+
+  <!-- Simplified GenLayer-inspired core mark -->
+  <g filter="url(#softGlow)">
+    <path d="M32 18 L23 38 L28 35 L32 27 L36 35 L41 38 Z" fill="url(#gl)"/>
+    <path d="M32 28 L27.5 38 L32 35.5 L36.5 38 Z" fill="#0B1020" opacity=".9"/>
+  </g>
+</svg>
